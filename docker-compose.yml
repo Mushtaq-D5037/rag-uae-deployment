@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./rag-uae-legal-ai-backend
+      dockerfile: Dockerfile
+    container_name: rag-uae-backend
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    restart: always
+
+  frontend:
+    build:
+      context: ./rag-uae-legal-ai-frontend
+      dockerfile: Dockerfile
+    container_name: rag-uae-frontend
+    working_dir: /app
+    ports:
+      - "80:80"
+    restart: always
